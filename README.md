@@ -1,1 +1,2 @@
-# aevm-frontend
+# AEVM
+Accumulated Finance EVM

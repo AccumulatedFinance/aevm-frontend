@@ -1,0 +1,479 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=Inter:wght@300;400;600&display=swap');
+
+.code {
+    font-family: 'IBM Plex Mono', sans-serif !important;
+}
+
+a {
+    color: #683ab7;
+    text-decoration: none;
+}
+
+.App {
+    text-align: center;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+.navbar {
+    background-color: #dcd2f6;
+}
+
+.App-header {
+    background-color: #ede7fd;
+    background-image: url("resources/bg.svg");
+    background-size: cover;
+    background-position-y: top;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: calc(10px + 2vmin);
+}
+
+.App-header .hero-title {
+    text-align: left;
+}
+
+.App-body {
+    background-color: #ede7fd;
+}
+
+.App-header, .App-body, .App-footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.App-menu {
+    width: 100%;
+    height: 40px;
+}
+
+.navbar .logo {
+    height: 40px;
+}
+
+.navbar .logo img {
+    height: 40px;
+}
+
+.App-menu .navbar-menu a {
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-left: 15px;
+    color: #262626;
+}
+
+.App-menu .navbar-menu a:first-child {
+    margin-left: 5px;
+}
+
+.App-menu .navbar-menu a.active {
+    background-color: var(--joy-palette-primary-100);
+    color: var(--joy-palette-primary-900);
+}
+
+.App-menu .navbar-menu a:hover {
+    background-color: var(--joy-palette-primary-100);
+}
+
+.App-menu .MuiListItem-root a.Mui-selected, .App-menu .MuiListItem-root a:hover {
+    background-color: var(--joy-palette-primary-softBg, var(--joy-palette-primary-100, #FFFFFF));
+}
+
+.App-menu .MuiListItem-root .menuitem-logo:hover {
+    background: none !important;
+}
+
+.App-menu .navbar-menu .react-icons {
+    vertical-align: middle;
+    margin-left: 4px;
+    margin-top: -1px;
+}
+
+.App-header .hero {
+    text-align: left;
+}
+
+.poolcards .card-soon {
+    opacity: 0.5;
+}
+
+.poolcards .logo {
+    margin: 0 auto;
+}
+
+.poolcards .lsd-logo {
+    margin-top: 20px;
+    margin-bottom: -22px;
+}
+
+.poolcards .platform-badge, .poolcards .st-token {
+    margin: 3px;
+    font-size: 80%;
+}
+
+.poolcards .platform-badge img {
+    height: 16px;
+    display: inline;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.poolcards .platform-badge img:not(:last-of-type) {
+    margin-right: 4px;
+}
+
+.join-community a {
+    opacity: 0.75;
+    transition: opacity 0.3s ease;
+}
+
+.join-community a:hover {
+    opacity: 1;
+}
+
+.MuiSheet-root {
+    border-radius: 8px;
+}
+
+.header-metrics .react-icons {
+    font-size: 28px;
+}
+
+.header-metrics .stats-description .react-icons {
+    font-size: 14px;
+    vertical-align: middle;
+    margin-top: -2px;
+    margin-right: 3px;
+}
+
+.header-metrics .stats-description .react-icons.react-icons-end {
+    margin-right: 0;
+    margin-left: 2px;
+}
+
+.powered-by {
+    background: #FFF !important;
+}
+
+.powered-by img {
+    height: 18px;
+    width: 18px;
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 4px;
+}
+
+.MuiTypography-h2 .section-heading-icon {
+    height: 36px;
+    width: 36px;
+    vertical-align: middle;
+    margin-top: -5px;
+    margin-right: 8px;
+}
+
+.MuiTypography-h3 .section-heading-icon {
+    height: 32px;
+    width: 32px;
+    vertical-align: middle;
+    margin-top: -5px;
+    margin-right: 8px;
+}
+
+.acfi-accordeon .MuiAccordionDetails-root {
+    text-align: left;
+    background: #FFF;
+}
+
+.acfi-accordeon .MuiAccordionDetails-content {
+    font-size: 14px;
+    padding-bottom: 12px;
+}
+
+.acfi-accordeon .MuiAccordionSummary-root {
+    font-weight: bold;
+    background: #FFF;
+}
+
+.App-footer .logo {
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.App-footer .footer-menu .MuiListItem-root {
+    text-align: center;
+    margin: auto;
+    font-size: 24px;
+}
+
+.App-footer .footer-menu .MuiListItem-root .MuiListItemButton-root:hover {
+    background: none !important;
+}
+
+.App-footer .react-icons {
+    vertical-align: middle;
+    margin-top: -1px;
+}
+
+.App-footer .react-icons-end {
+    margin-left: 3px;
+    margin-right: 0;
+}
+
+
+.pool-info {
+    text-align: left;
+}
+
+.token-chip.MuiChip-root {
+    font-weight: bold;
+    padding: 5px 12px 5px 12px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+}
+
+.token-chip .action-icons {
+    vertical-align: middle;
+    line-height: 1;
+}
+
+.token-chip .action-icons .react-icons {
+    margin-left: 2px;
+}
+
+.pool-info .question-icon {
+    margin-left: 6px;
+    font-size: 125%;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+.MuiButton-root .react-icons {
+    font-size: 125%;
+    margin-right: 5px;
+}
+
+.MuiButton-root .react-icons-end {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+.staking-dashboard .chain-logo {
+    margin-right: 5px;
+    margin-top: -3px;
+    vertical-align: middle;
+}
+
+.lsd-network-selector .chain-logo {
+    margin-right: 6px;
+}
+
+.web3-alert.web3-alert-success a {
+    color: #33691e;
+}
+
+.supporters img {
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 4px;
+}
+
+.staking-dashboard .react-icons, .withdrawal-requests .react-icons {
+    margin-top: -2px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.withdrawal-requests .react-icons.react-icons-end {
+    margin-right: 0;
+    margin-left: 3px;
+    opacity: 0.5;
+}
+
+.MuiTypography-root.info, .MuiStep-root.info {
+    color: #12467B;
+}
+
+.MuiChip-variantSoft.info, .MuiTypography-variantSoft.info, .MuiAlert-variantSoft.info, .MuiButton-variantSoft.info, .MuiStepIndicator-variantSoft.info {
+    color: #12467B;
+    background-color: #E3EFFB;
+}
+
+.MuiChip-variantOutlined.info, .MuiTypography-variantOutlined.info, .MuiAlert-variantOutlined.info, .MuiButton-variantOutlined.info, .MuiStepIndicator-variantOutlined.info {
+    color: #12467B;
+    background-color: #E3EFFB;
+    border-color: #97C3F0;
+}
+
+.MuiChip-variantSolid.info, .MuiTypography-variantSolid.info, .MuiAlert-variantSolid.info, .MuiButton-variantSolid.info, .MuiStepIndicator-variantSolid.info {
+    color: #FFF;
+    background-color: #0B6BCB;
+}
+
+.liquid-staking-how .react-icons {
+    font-size: 85%;
+    vertical-align: middle;
+}
+
+.liquid-staking-how h3 .react-icons {
+    margin-top: -4px;
+    margin-right: 5px;
+}
+
+.liquid-staking-how h3 .react-icons.react-icons-middle {
+    margin-left: 7px;
+}
+
+.liquid-staking-how .react-icons.react-icons-stepper {
+    font-size: 125%;
+}
+
+.protocol-base-tab .MuiTypography-body-sm .react-icons {
+    vertical-align: middle;
+    margin-top: -3px;
+}
+
+.protocol-base-tab .MuiTypography-body-sm .react-icons.react-icons-end {
+    margin-left: 4px;
+}
+
+.protocol-base-tab .MuiChip-root .react-icons {
+    margin-top: -2px;
+    margin-right: 3px;
+    vertical-align: middle;
+    opacity: 0.5;
+}
+
+.ecosystem-card .MuiAspectRatio-content img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.ecosystem-card .MuiChip-root {
+    cursor: pointer;
+}
+
+.topbar .react-icons {
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 4px;
+}
+
+.card-tvl .react-icons {
+    vertical-align: middle;
+    margin-top: -3px;
+    margin-right: 3px;
+    opacity: 0.5;
+}
+
+.defi-pools-table .platform-badge img {
+    height: 16px;
+    display: inline;
+    vertical-align: middle;
+    margin-top: -2px;
+}
+
+.early-bird-xp .MuiTypography-title-lg .react-icons {
+    vertical-align: middle;
+    margin-top: -4px;
+}
+
+.early-bird-xp .MuiTypography-title-lg .react-icons.react-icons-end {
+    margin-left: 2px;
+}
+
+.link-heading {
+    text-transform: uppercase;
+}
+
+.link-heading .react-icons {
+    font-size: 85%;
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-right: 5px;
+}
+
+.link-heading .react-icons.react-icons-end {
+    margin-left: 5px;
+    margin-right: 0;
+}
+
+.link-heading .MuiChip-root {
+    font-weight: bold;
+    margin-top: -4px;
+}
+
+.MuiTypography-title-lg .react-icons {
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-right: 6px;
+}
+
+.MuiTypography-title-lg .react-icons.react-icons-end {
+    margin-top: -3px;
+    margin-right: 0;
+    margin-left: 4px;
+}
+
+.MuiTypography-h4 .react-icons {
+    vertical-align: middle;
+    margin-top: -4px;
+    margin-right: 6px;
+}
+
+.MuiTypography-h4 .react-icons.react-icons-marginRight4 {
+    margin-right: 4px;
+}
+
+.ecosystem-card-logos {
+    display: grid !important;
+    gap: 2px;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 900px) {
+    .ecosystem-card-logos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1200px) {
+    .ecosystem-card-logos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.ecosystem-card-logos img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.protocol-links .MuiTypography-title-md .react-icons {
+    margin-top: -3px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.protocol-links .MuiChip-root .react-icons {
+    margin-top: -2px;
+    margin-right: 3px;
+    vertical-align: middle;
+}
+
+.protocol-links .MuiChip-root .react-icons.react-icons-end {
+    margin-left: 2px;
+    margin-right: 0;
+}
