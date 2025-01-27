@@ -16,23 +16,24 @@ a {
     -moz-osx-font-smoothing: grayscale;
 }
 
+.App .bg {
+    background: linear-gradient(135deg, #DBEAFE, #FFFFFF); /* Повторяем фон */
+}
+
 .App-logo {
     height: 40vmin;
     pointer-events: none;
 }
 
+
 .navbar {
-    background-color: #dcd2f6;
+    padding: 10px 20px;
 }
 
 .App-header {
-    background-color: #ede7fd;
-    background-image: url("resources/bg.svg");
-    background-size: cover;
-    background-position-y: top;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: calc(10px + 2vmin);
+    color: #FFFFFF;
 }
 
 .App-header .hero-title {
@@ -40,7 +41,6 @@ a {
 }
 
 .App-body {
-    background-color: #ede7fd;
 }
 
 .App-header, .App-body, .App-footer {

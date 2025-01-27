@@ -1,12 +1,8 @@
-import { Grid, Typography, Chip, Tooltip } from "@mui/joy";
+import { Grid, Typography, Chip } from "@mui/joy";
 import React, { FC } from "react";
 
-import { Link } from "react-router-dom";
-
-
-import CurveLogo from '../resources/supporters/curve.png';
-import StakeDAOLogo from '../resources/supporters/stakedao.png';
 import Logo from '../resources/logo-mark.svg'
+import {Link} from "react-router-dom";
 
 const Home: FC = () => {
 
@@ -23,27 +19,11 @@ const Home: FC = () => {
             App-Chain Powered by Native Yield
           </Typography>
           <Typography component={'span'} sx={{ mb: 3 }}>
-            <Link to={"/"}>
+            <Link to={"https://accumulated.finance"}>
               <Chip className="powered-by" size="lg"  variant="plain">
-                <img src={Logo} alt="ACFI" /><strong>$ACFI</strong> launch soon
+                <img src={Logo} alt="ACFI" />Powered by <strong>$ACFI</strong>
               </Chip>
             </Link>
-          </Typography>
-          <Typography component={'span'} level="title-lg" mb={1.5} sx={{ color: "#6c518d" }}>
-            Backed by angels from
-          </Typography>
-
-          <Typography component={'span'} sx={{ mb: 0 }} className="supporters">
-            <Tooltip title="Curve Finance" color="primary" size="sm">
-              <Link to="https://curve.fi" target="_blank">
-                <img src={CurveLogo} height={36} style={{ minWidth: 36 }} alt="Curve Finance" />
-              </Link>
-            </Tooltip>
-            <Tooltip title="Stake DAO" color="primary" size="sm">
-              <Link to="https://stakedao.org" target="_blank">
-                <img src={StakeDAOLogo} height={36} style={{ minWidth: 36 }} alt="Stake DAO" />
-              </Link>
-            </Tooltip>
           </Typography>
         </Grid>
         </Grid>
