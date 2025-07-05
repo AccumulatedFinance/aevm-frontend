@@ -25,9 +25,9 @@ const Home: FC = () => {
           </Typography>
           <Typography component={'span'} sx={{ mb: 3 }}>
             <Link to={"https://accumulated.finance/presale"} target="_blank">
-              <Chip className="powered-by" size="lg" variant="plain">
-                <img src={ACFILogo} alt="ACFI" />{" "}Powered by <strong>$ACFI</strong>
-                <Typography sx={{ ml: 1 }} textColor={"primary.500"}>(Presale)</Typography>
+              <Chip className="powered-by" size="lg" variant="plain" sx={{ p: 0.5, px: 1 }}>
+                <img src={ACFILogo} alt="ACFI" />Powered by <strong>$ACFI</strong>
+                <Chip variant="solid" color="success" size="sm" sx={{ mt: -0.25, ml: 1 }}>Presale Live</Chip>
               </Chip>
             </Link>
           </Typography>
