@@ -10,7 +10,7 @@ import BigNumber from "bignumber.js";
 
 const IndexFunds: React.FC = () => {
 
-	const {address} = useAccount()
+	const {address} = useAccount();
 
 	return (
 		<Card variant="outlined" sx={{ mt: 4, maxWidth: 480, mx: 'auto', p: 3 }}>
@@ -23,6 +23,8 @@ const IndexFunds: React.FC = () => {
 						token.address,
 						address
 					);
+
+					console.log(balance)
 
 					return (
 						<Box
