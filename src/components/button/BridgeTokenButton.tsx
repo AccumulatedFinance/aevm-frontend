@@ -8,6 +8,7 @@ import { TbArrowBigRightLinesFilled } from "react-icons/tb";
 import {useTransactionEffect} from "../hooks/useTransactionEffect";
 import ActionButton from "./ActionButton";
 import {useBigNumberContext} from "../../contexts/BigNumberContext";
+import {useStore} from "../../StoreProvider";
 
 interface Props {
 	chainId: BigNumber;
@@ -17,13 +18,15 @@ interface Props {
 }
 
 const BridgeTokenButton: FC<Props> = observer(({ chainId, bridgeContract, availableBalance , actionName }) => {
+
+	const {alertStore} = useStore();
 	const amount = useBigNumberContext();
 
 	const { address } = useAccount();
 
 	const { data, writeContract, reset, isPending, error } = useWriteContract();
 
-	useTransactionEffect(error, data, reset);
+	useTransactionEffect(alertStore, error, data, reset);
 
 	const handleAction = () => {
 
