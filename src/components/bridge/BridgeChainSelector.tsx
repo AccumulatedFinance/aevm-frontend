@@ -37,7 +37,7 @@ const BridgeChainSelector: React.FC<Props> = ({
 			}}
 			sx={{ mb: 3, flexWrap: 'wrap', gap: 1 }}
 		>
-			{options.map(({ chainId, tokenIndex, token, chainName }) => (
+			{options.map(({ chainId, tokenIndex, token }) => (
 				<Sheet
 					key={`${chainId.toFixed()}-${tokenIndex}`}
 					sx={{
@@ -59,13 +59,10 @@ const BridgeChainSelector: React.FC<Props> = ({
 									size="sm"
 									src={logoUtils.getTokenLogo(chainId, token.address)}
 								>
-									{token.symbol[0]}
+									{token.symbol}
 								</Avatar>
 								<Box>
 									<Typography level="body-sm">{token.symbol}</Typography>
-									<Typography level="body-xs" sx={{ opacity: 0.6 }}>
-										{chainName}
-									</Typography>
 								</Box>
 							</Box>
 						}

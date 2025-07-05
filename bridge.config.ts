@@ -1,33 +1,34 @@
 export const bridgeConfig = {
   545: {
     name: 'Flow EVM Testnet',
-    bridgeContract: '0x',
+    bridgeContract: '0xCcaCCa0Fe74D617319A7b3915140E6ad7F96Ec77',
     tokens: [
       {
         symbol: 'FLOW',
-        address: '0x',
-        decimals: 18
-      },
-      {
-        symbol: 'STFLOW',
-        address: '0x',
+        address: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
         decimals: 18
       }
     ]
   },
   296: {
     name: 'Hedera AEVM',
-    bridgeContract: '0x',
+    bridgeContract: '0x45FC6390984565481C081125c3E71bE7df050845',
     tokens: [
       {
         symbol: 'HBAR',
-        address: '0x',
+        address: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
         decimals: 18
-      },
+      }
+    ]
+  },
+  114: {
+    name: 'Flare Coston2',
+    bridgeContract: '0x45FC6390984565481C081125c3E71bE7df050845',
+    tokens: [
       {
-        symbol: 'STHBAR',
-        address: '0x',
-        decimals: 8
+        symbol: 'C2FLR',
+        address: '0xeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
+        decimals: 18
       }
     ]
   }
