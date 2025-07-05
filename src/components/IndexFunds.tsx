@@ -5,6 +5,8 @@ import {AEVM_CHAIN_ID} from "../constants";
 import {logoUtils} from "../initLib";
 import {useAccount} from "wagmi";
 import { aevmConfig } from '../../aevm.config';
+import {EthUtils, FormattingUtils} from "@accumulatedfinance/frontend-toolkit";
+import BigNumber from "bignumber.js";
 
 const IndexFunds: React.FC = () => {
 
@@ -51,7 +53,7 @@ const IndexFunds: React.FC = () => {
 							<Divider orientation="vertical" />
 
 							<Typography level="body-sm" fontWeight="lg" sx={{ minWidth: 100, textAlign: 'right' }}>
-								{balance !== undefined ? balance.shiftedBy(-token.decimals).toFixed(4) : <Skeleton width={60} />}
+								{balance !== undefined ? FormattingUtils.formatForDisplay(EthUtils.toHumanReadable(balance, new BigNumber(token.decimals)), 'numberLong'): <Skeleton width={60} />}
 							</Typography>
 						</Box>
 					);
