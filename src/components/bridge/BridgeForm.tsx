@@ -21,7 +21,7 @@ const BridgeForm: React.FC = () => {
 	if (!isConnected) {
 		return (
 			<Card variant="outlined" sx={{ mt: 4, maxWidth: 420, mx: 'auto', p: 3 }}>
-				<Typography level="h4">Подключите кошелёк</Typography>
+				<Typography level="h4">Connect to wallet</Typography>
 			</Card>
 		);
 	}
@@ -29,14 +29,14 @@ const BridgeForm: React.FC = () => {
 	if (!config || !selectedToken) {
 
 		return (
-			<Card variant="outlined" sx={{ mt: 4, maxWidth: 420, mx: 'auto', p: 3 }}>
+			<Card variant="outlined" sx={{ mt: 4, maxWidth: 520, mx: 'auto', p: 3 }}>
 				<Typography level="body-md">Chain or token is not supported</Typography>
 			</Card>
 		);
 	}
 
 	return (
-		<Card variant="outlined" sx={{ mt: 4, maxWidth: 420, mx: 'auto', p: 3 }}>
+		<Card variant="outlined" sx={{ mt: 4, maxWidth: 460, mx: 'auto', p: 3 }}>
 			<Typography level="h4" mb={2}>Bridge</Typography>
 
 			<BridgeChainSelector

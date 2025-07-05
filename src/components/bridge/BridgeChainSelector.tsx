@@ -35,7 +35,7 @@ const BridgeChainSelector: React.FC<Props> = ({
 				const [chainIdStr, tokenIdxStr] = e.target.value.split('-');
 				onSelect(new BigNumber(chainIdStr), Number(tokenIdxStr));
 			}}
-			sx={{ mb: 3, flexWrap: 'wrap', gap: 1 }}
+			sx={{ mb: 3, flexWrap: 'nowrap', gap: 1 , overflow: 'auto', whiteSpace: 'nowrap' }}
 		>
 			{options.map(({ chainId, tokenIndex, token }) => (
 				<Sheet
