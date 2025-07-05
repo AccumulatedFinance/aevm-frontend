@@ -2,6 +2,7 @@ export const bridgeConfig = {
   545: {
     name: 'Flow EVM Testnet',
     bridgeContract: '0xCcaCCa0Fe74D617319A7b3915140E6ad7F96Ec77',
+    url: 'https://testnet.accumulated.finance/stake/flow',
     tokens: [
       {
         symbol: 'FLOW',
@@ -20,6 +21,7 @@ export const bridgeConfig = {
   296: {
     name: 'Hedera AEVM',
     bridgeContract: '0x45FC6390984565481C081125c3E71bE7df050845',
+    url: 'https://testnet.accumulated.finance/stake/hbar',
     tokens: [
       {
         symbol: 'HBAR',
@@ -38,6 +40,7 @@ export const bridgeConfig = {
   114: {
     name: 'Flare Coston2',
     bridgeContract: '0x45FC6390984565481C081125c3E71bE7df050845',
+    url: 'https://testnet.accumulated.finance/stake/flr',
     tokens: [
       {
         symbol: 'C2FLR',
