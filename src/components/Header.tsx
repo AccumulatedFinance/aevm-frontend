@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Box, Stack} from '@mui/joy';
+import {Box, Button, Stack} from '@mui/joy';
 
 
 export default function Header() {
@@ -10,22 +10,28 @@ export default function Header() {
          sx={{
            display: 'flex',
            flexGrow: 1,
-           justifyContent: {
-             'xs': 'right',
-             'sm': 'center'
-           },
-           minHeight: '50px'
+           justifyContent: 'space-between',
          }}
     >
-      <Stack
-        direction="row"
-        justifyContent="center"
-        alignItems="center"
-        spacing={2}
-        sx={{display: {xs: 'none', sm: 'flex'}}}
-        className="navbar-menu"
-      >
-      </Stack>
+    <Stack
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      spacing={2}
+      sx={{display: {xs: 'none', sm: 'flex'}}}
+      className="navbar-menu"
+    >
+    </Stack>
+    <Box sx={{
+      overflow: 'auto',
+      '&::-webkit-scrollbar': {display: 'none'},
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      gap: 1
+    }}>
+      <Button>Connect Wallet</Button>
+    </Box>
     </Box>
   );
 }
