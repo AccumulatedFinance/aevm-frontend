@@ -7,9 +7,11 @@ import bridgeConfig from '../../../bridge.config';
 import BridgeChainSelector from './BridgeChainSelector';
 import BridgeFormControl from './BridgeFormControl';
 import BridgeTokenButton from '../button/BridgeTokenButton';
+import {useNativeBalance} from "../../contracts/hooks/useNativeBalance";
+import {EthUtils} from "@accumulatedfinance/frontend-toolkit";
 
 const BridgeForm: React.FC = () => {
-	const { isConnected } = useAccount();
+	const { isConnected, address } = useAccount();
 
 	const [selectedChainId, setSelectedChainId] = useState<BigNumber>(new BigNumber(114));
 	const [selectedTokenIndex, setSelectedTokenIndex] = useState<number>(0);
@@ -17,6 +19,9 @@ const BridgeForm: React.FC = () => {
 	const chainIdNum = selectedChainId.toNumber();
 	const config = bridgeConfig[chainIdNum as keyof typeof bridgeConfig];
 	const selectedToken = config?.tokens[selectedTokenIndex];
+
+	const availableBalance = useNativeBalance(selectedChainId, address);
+
 
 	if (!isConnected) {
 		return (
@@ -34,7 +39,6 @@ const BridgeForm: React.FC = () => {
 			</Card>
 		);
 	}
-
 	return (
 		<Card variant="outlined" sx={{ mt: 4, maxWidth: 460, mx: 'auto', p: 3 }}>
 			<Typography level="h4" mb={2}>Bridge</Typography>
@@ -53,13 +57,13 @@ const BridgeForm: React.FC = () => {
 				tokenSymbol={selectedToken.symbol}
 				tokenAddress={selectedToken.address}
 				tokenDecimals={new BigNumber(selectedToken.decimals)}
-				availableBalance={new BigNumber(111)} // TODO: заменить на useBalance()
-				inputLabel={`Transfer your ${selectedToken.symbol} to AEVM token`}
+				availableBalance={EthUtils.toHumanReadable(availableBalance, new BigNumber(selectedToken.decimals))}
+				inputLabel={`Transfer your ${selectedToken.symbol}`}
 			>
 				<BridgeTokenButton
 					chainId={selectedChainId}
 					bridgeContract={config.bridgeContract}
-					balance={new BigNumber(0)} // TODO: заменить на useBalance()
+					availableBalance={availableBalance}
 					tokenDecimals={new BigNumber(selectedToken.decimals)}
 					actionName={`Bridge ${selectedToken.symbol}`}
 				/>
