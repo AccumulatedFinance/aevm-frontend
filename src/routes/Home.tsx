@@ -1,13 +1,19 @@
 import { Grid, Typography, Chip, Stepper, Step, StepButton, StepIndicator, Box, Card, CardContent } from "@mui/joy";
 import React, { FC, useState } from "react";
+import BigNumber from "bignumber.js";
 
 import Logo from '../resources/logo-mark.svg'
 import ACFILogo from '../resources/acfi.svg'
 import { Link } from "react-router-dom";
 import BridgeForm from "../components/bridge/BridgeForm";
+import {useStore} from "../StoreProvider";
+import ActionButton from "../components/button/ActionButton";
+import {observer} from "mobx-react";
 
-const Home: FC = () => {
+const Home: FC = observer(() => {
   const [activeStep, setActiveStep] = useState(0);
+  const {appStore} = useStore();
+  const {chainId} = appStore;
 
   const handleStepChange = (step: number) => {
     setActiveStep(step);
@@ -58,9 +64,15 @@ const Home: FC = () => {
               </Typography>
             )}
             {activeStep === 1 && (
+              <>
               <Typography level="body-lg">
-                Index Funds will be here
+                Index Funds
               </Typography>
+              {
+                !(chainId?.eq(619001)) && <ActionButton chainId={new BigNumber(619001)} />
+              }
+              </>
+
             )}
           </Box>
 
@@ -111,6 +123,6 @@ const Home: FC = () => {
       </Grid>
     </>
   )
-}
+});
 
 export default Home;
