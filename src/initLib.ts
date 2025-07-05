@@ -11,5 +11,6 @@ const appConfig: AppConfig = {
 export const {
   wagmiConfig,
   chainProvider,
-  logoUtils
+  logoUtils,
+  tokenUtils
 } = initFrontendToolkit(appConfig);

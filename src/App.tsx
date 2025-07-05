@@ -11,6 +11,7 @@ import Header from "./components/Header";
 import NotFound from "./routes/errors/NotFound";
 import Home from "./routes/Home";
 import Footer from "./components/Footer";
+import Web3Alert from "./components/alert/Web3Alert";
 
 const theme = extendTheme({
   "colorSchemes": {
@@ -42,10 +43,12 @@ function App() {
                 </Link>
                 <Header />
               </Layout.Header>
+              <Web3Alert>
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
+              </Web3Alert>
             </div>
               <Layout.Footer>
                 <Footer />
