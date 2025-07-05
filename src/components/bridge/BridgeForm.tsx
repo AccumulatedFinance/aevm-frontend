@@ -50,11 +50,11 @@ const BridgeForm: React.FC = () => {
 
 			<BridgeFormControl
 				chainId={selectedChainId}
-				tokenSymbol1={selectedToken.symbol}
-				tokenAddress1={selectedToken.address}
-				tokenDecimals1={new BigNumber(selectedToken.decimals)}
+				tokenSymbol={selectedToken.symbol}
+				tokenAddress={selectedToken.address}
+				tokenDecimals={new BigNumber(selectedToken.decimals)}
 				availableBalance={new BigNumber(111)} // TODO: заменить на useBalance()
-				inputLabel1={`Transfer your ${selectedToken.symbol} to AEVM token`}
+				inputLabel={`Transfer your ${selectedToken.symbol} to AEVM token`}
 			>
 				<BridgeTokenButton
 					chainId={selectedChainId}

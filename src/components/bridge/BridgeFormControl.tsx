@@ -25,7 +25,7 @@ interface IProps {
 
 	tokenSymbol: string;
 	tokenAddress: Address;
-	tokenDecimals1: BigNumber;
+	tokenDecimals: BigNumber;
 
 	availableBalance: BigNumber;
 
@@ -38,7 +38,7 @@ const BridgeFormControl: FC<IProps> = observer((x) => {
 
 	const [inputAmount, setInputAmount] = useState<string>('');
 
-	const inputAmountBN = EthUtils.toETH(inputAmount, x.tokenDecimals1);
+	const inputAmountBN = EthUtils.toETH(inputAmount, x.tokenDecimals);
 
 	useEffect(() => {
 		setInputAmount('');
