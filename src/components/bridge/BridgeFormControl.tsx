@@ -18,6 +18,7 @@ import {logoUtils} from "../../initLib";
 import {useStore} from "../../StoreProvider";
 import {BigNumberContext} from "../../contexts/BigNumberContext";
 import {Address} from "viem";
+import {autorun} from "mobx";
 
 interface IProps {
 	children: ReactNode;
@@ -34,11 +35,20 @@ interface IProps {
 }
 
 const BridgeFormControl: FC<IProps> = observer((x) => {
-	const { appStore } = useStore();
+	const { appStore, alertStore } = useStore();
 
 	const [inputAmount, setInputAmount] = useState<string>('');
 
 	const inputAmountBN = EthUtils.toETH(inputAmount, x.tokenDecimals);
+
+	useEffect(() => {
+		const disposer = autorun(() => {
+			if (alertStore.lastAlert?.type === "TX_SUCCESS") {
+				setInputAmount("");
+			}
+		});
+		return () => disposer();
+	}, [alertStore]);
 
 	useEffect(() => {
 		setInputAmount('');
