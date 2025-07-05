@@ -14,10 +14,9 @@ interface Props {
 	chainId: BigNumber;
 	bridgeContract: Address;
 	availableBalance: BigNumber | undefined;
-	actionName: string;
 }
 
-const BridgeTokenButton: FC<Props> = observer(({ chainId, bridgeContract, availableBalance , actionName }) => {
+const BridgeTokenButton: FC<Props> = observer(({ chainId, bridgeContract, availableBalance  }) => {
 
 	const {alertStore} = useStore();
 	const amount = useBigNumberContext();
@@ -58,7 +57,7 @@ const BridgeTokenButton: FC<Props> = observer(({ chainId, bridgeContract, availa
 
 	return (
 		<ActionButton
-			actionName={!isPending ? actionName : `${actionName}ing...`}
+			actionName={!isPending ? "Bridge" :"Bridging..."}
 			chainId={chainId}
 			action={handleAction}
 			disabled={disabled}

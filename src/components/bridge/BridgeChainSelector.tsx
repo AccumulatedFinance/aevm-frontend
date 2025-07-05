@@ -17,7 +17,7 @@ const BridgeChainSelector: React.FC<Props> = ({
 																							}) => {
 	const options = Object.entries(bridgeConfig).flatMap(([chainIdStr, cfg]) => {
 		const chainId = new BigNumber(chainIdStr);
-		return cfg.tokens.map((token, index) => ({
+		return cfg.tokens.filter(token =>!token.hidden).map((token, index) => ({
 			chainId,
 			tokenIndex: index,
 			token,
