@@ -12,21 +12,14 @@ import {useBigNumberContext} from "../../contexts/BigNumberContext";
 interface Props {
 	chainId: BigNumber;
 	bridgeContract: Address;
-	balance: BigNumber | undefined;
-	cap?: BigNumber;
-	tokenDecimals: BigNumber;
+	availableBalance: BigNumber | undefined;
 	actionName: string;
 }
 
-const BridgeTokenButton: FC<Props> = observer(({ chainId, bridgeContract, balance, cap, tokenDecimals, actionName }) => {
+const BridgeTokenButton: FC<Props> = observer(({ chainId, bridgeContract, availableBalance , actionName }) => {
 	const amount = useBigNumberContext();
 
-	//todo to change
-	console.log(tokenDecimals)
 	const { address } = useAccount();
-
-	//todo change on real
-	const value = BigInt(1);
 
 	const { data, writeContract, reset, isPending, error } = useWriteContract();
 
@@ -34,26 +27,31 @@ const BridgeTokenButton: FC<Props> = observer(({ chainId, bridgeContract, balanc
 
 	const handleAction = () => {
 
-		//todo to remove
-		console.log(address);
 		writeContract({
 			address: bridgeContract,
 			abi: [
 				{
-					inputs: [{ internalType: 'uint256', name: 'amount', type: 'uint256' }],
-					name: 'bridgeTokens',
-					outputs: [],
-					stateMutability: 'nonpayable',
-					type: 'function',
+					"inputs": [
+						{
+							"internalType": "address",
+							"name": "receiver",
+							"type": "address"
+						}
+					],
+					"name": "deposit",
+					"outputs": [],
+					"stateMutability": "payable",
+					"type": "function"
 				},
 			],
-			args: [value],
-			functionName: 'bridgeTokens',
+			args: [address as Address],
+			value: BigInt(amount.toFixed()),
+			functionName: 'deposit',
 			__mode: 'prepared',
 		});
 	};
 
-	const disabled = amount.lte(0) || balance?.lt(amount) || cap?.lt(amount) || isPending;
+	const disabled = amount.lte(0) || availableBalance?.lt(amount)  || isPending;
 
 	return (
 		<ActionButton

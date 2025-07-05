@@ -64,7 +64,6 @@ const BridgeForm: React.FC = () => {
 					chainId={selectedChainId}
 					bridgeContract={config.bridgeContract}
 					availableBalance={availableBalance}
-					tokenDecimals={new BigNumber(selectedToken.decimals)}
 					actionName={`Bridge ${selectedToken.symbol}`}
 				/>
 			</BridgeFormControl>
