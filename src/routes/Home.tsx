@@ -67,9 +67,6 @@ const Home: FC = observer(() => {
             )}
             {activeStep === 1 && (
               <>
-              <Typography level="body-lg">
-                Index Funds
-              </Typography>
               {
                 (chainId?.eq(AEVM_CHAIN_ID)) ?
                   <IndexFunds/> :

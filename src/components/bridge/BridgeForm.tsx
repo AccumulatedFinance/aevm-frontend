@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {Card, Typography} from '@mui/joy';
+import {Card, Typography, Alert, Divider} from '@mui/joy';
 import {useAccount} from 'wagmi';
 import BigNumber from 'bignumber.js';
 
@@ -72,10 +72,24 @@ const BridgeForm: React.FC = () => {
 			</Card>
 
 			<Typography component={'span'} sx={{textAlign: "left"}} pt={2}>
-				<Typography component={'span'} sx={{display: "inline-block", mr: 1, mb: 0.5}}>
+				<Typography component={'span'} sx={{display: "inline-block", mt: 2, mr: 1, mb: 0.5}}>
 					<ContractChip chainId={new BigNumber(selectedChainId)} address={lstToken.address} label={lstToken.symbol}
 												decimals={new BigNumber(lstToken.decimals)}/>
 				</Typography>
+				<Alert variant="soft" color="primary" sx={{ mt: 2, width: "500px", mx: "auto" }}>
+					<span>
+						<strong>{lstToken.symbol}</strong> is {selectedToken.symbol} LST deployed on the <strong>{config.name}</strong>:
+						{" "}
+						<a href={config.url} target='_blank' rel="noreferrer">{config.url}</a>
+						<Divider sx={{ my: 1 }} />
+						<Typography level="body-md">Bridging {selectedToken.symbol} from {config.name} to AEVM works like this:</Typography><br />
+						<Divider sx={{ my: 0.5, opacity: 0 }} />
+						1. <strong>{selectedToken.symbol}</strong> ({config.name}) → <strong>{lstToken.symbol}</strong> ({config.name})<br />
+						2. <strong>{lstToken.symbol}</strong> is locked in the bridge, generating staking rewards from LST yield<br />
+						3. A <strong>Rebase {selectedToken.symbol}</strong> token is minted to the user’s account on <strong>AEVM</strong><br />
+						4. As rewards accumulate on {config.name} (via {lstToken.symbol} LST), they’re distributed to all <strong>Rebase {selectedToken.symbol}</strong> holders on the AEVM through rebasing
+					</span>
+				</Alert>
 			</Typography>
 		</>
 	)
