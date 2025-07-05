@@ -23,13 +23,13 @@ interface IProps {
 	children: ReactNode;
 	chainId: BigNumber;
 
-	tokenSymbol1: string;
-	tokenAddress1: Address;
+	tokenSymbol: string;
+	tokenAddress: Address;
 	tokenDecimals1: BigNumber;
 
 	availableBalance: BigNumber;
 
-	inputLabel1: string;
+	inputLabel: string;
 
 }
 
@@ -53,7 +53,7 @@ const BridgeFormControl: FC<IProps> = observer((x) => {
 			<FormControl>
 				<FormLabel>
 					<Typography component="span" level="title-sm" fontWeight="bold">
-						{x.inputLabel1}
+						{x.inputLabel}
 					</Typography>
 				</FormLabel>
 
@@ -63,19 +63,19 @@ const BridgeFormControl: FC<IProps> = observer((x) => {
 					endDecorator={
 						<>
 							<Divider orientation="vertical" />
-							{x.chainId && x.tokenAddress1 && x.tokenSymbol1 ? (
+							{x.chainId && x.tokenAddress && x.tokenSymbol ? (
 								<Avatar
-									src={logoUtils.getTokenLogo(x.chainId, x.tokenAddress1)}
+									src={logoUtils.getTokenLogo(x.chainId, x.tokenAddress)}
 									variant="solid"
 									sx={{ "--Avatar-size": "22px", mr: 0.75, ml: 1.25 }}
 								>
-									{x.tokenSymbol1}
+									{x.tokenSymbol}
 								</Avatar>
 							) : (
 								<Skeleton variant="circular" width={22} height={22} sx={{ mr: 0.75, ml: 1.25 }} />
 							)}
 							<Typography component="span" fontWeight="bold">
-								{x.tokenSymbol1 || <Skeleton>TOKEN</Skeleton>}
+								{x.tokenSymbol || <Skeleton>TOKEN</Skeleton>}
 							</Typography>
 						</>
 					}
