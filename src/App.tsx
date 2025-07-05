@@ -3,6 +3,7 @@ import './App.css';
 import { CssVarsProvider, extendTheme } from '@mui/joy/styles';
 import CssBaseline from '@mui/joy/CssBaseline';
 import {BrowserRouter as Router, Routes, Link, Route} from "react-router-dom"
+import RainbowKitInitializer from './components/rainbowkit/RainbowKitInitializer';
 
 import logoMark from './resources/logo-mark.svg';
 import Layout from "./components/Layout";
@@ -30,6 +31,7 @@ const theme = extendTheme({
 function App() {
   return (
     <Router>
+      <RainbowKitInitializer>
         <CssVarsProvider theme={theme}>
           <CssBaseline />
           <Layout>
@@ -50,6 +52,7 @@ function App() {
               </Layout.Footer>
           </Layout>
         </CssVarsProvider>
+      </RainbowKitInitializer>
     </Router>
   );
 }

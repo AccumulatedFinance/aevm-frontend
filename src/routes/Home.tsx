@@ -4,6 +4,7 @@ import React, { FC, useState } from "react";
 import Logo from '../resources/logo-mark.svg'
 import ACFILogo from '../resources/acfi.svg'
 import { Link } from "react-router-dom";
+import BridgeForm from "../components/bridge/BridgeForm";
 
 const Home: FC = () => {
   const [activeStep, setActiveStep] = useState(0);
@@ -53,7 +54,7 @@ const Home: FC = () => {
           <Box sx={{ mb: 6, textAlign: "center" }}>
             {activeStep === 0 && (
               <Typography level="body-lg">
-                Deposit form will be here
+                <BridgeForm/>
               </Typography>
             )}
             {activeStep === 1 && (

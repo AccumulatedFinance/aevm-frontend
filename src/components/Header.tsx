@@ -1,6 +1,7 @@
 import React from 'react';
 
-import {Box, Button, Stack} from '@mui/joy';
+import {Box, Stack} from '@mui/joy';
+import RainbowButton from "./rainbowkit/RainbowButton";
 
 
 export default function Header() {
@@ -30,7 +31,7 @@ export default function Header() {
       alignItems: 'center',
       gap: 1
     }}>
-      <Button>Connect Wallet</Button>
+      <RainbowButton/>
     </Box>
     </Box>
   );

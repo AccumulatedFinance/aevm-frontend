@@ -9,6 +9,10 @@
     "lint": "eslint 'src/**/*.{js,jsx,ts,tsx}'"
   },
   "dependencies": {
+    "@accumulatedfinance/frontend-toolkit": "latest",
+    "mobx": "^6.12.0",
+    "mobx-react": "^9.1.0",
+    "@walletconnect/modal": "^2.7.0",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
     "@mui/icons-material": "^5.16.7",
