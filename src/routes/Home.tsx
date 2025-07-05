@@ -26,6 +26,7 @@ const Home: FC = () => {
             <Link to={"https://accumulated.finance/presale"} target="_blank">
               <Chip className="powered-by" size="lg"  variant="plain">
                 <img src={ACFILogo} alt="ACFI" />{" "}Powered by <strong>$ACFI</strong>
+                <Typography sx={{ ml: 1 }} textColor={"primary.500"}>(Presale)</Typography>
               </Chip>
             </Link>
           </Typography>
