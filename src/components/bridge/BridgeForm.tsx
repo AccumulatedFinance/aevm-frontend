@@ -11,7 +11,7 @@ import BridgeTokenButton from '../button/BridgeTokenButton';
 const BridgeForm: React.FC = () => {
 	const { isConnected } = useAccount();
 
-	const [selectedChainId, setSelectedChainId] = useState<BigNumber>(new BigNumber(296));
+	const [selectedChainId, setSelectedChainId] = useState<BigNumber>(new BigNumber(114));
 	const [selectedTokenIndex, setSelectedTokenIndex] = useState<number>(0);
 
 	const chainIdNum = selectedChainId.toNumber();
