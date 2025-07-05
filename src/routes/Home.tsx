@@ -9,6 +9,8 @@ import BridgeForm from "../components/bridge/BridgeForm";
 import {useStore} from "../StoreProvider";
 import ActionButton from "../components/button/ActionButton";
 import {observer} from "mobx-react";
+import {AEVM_CHAIN_ID} from "../constants";
+import IndexFunds from "../components/IndexFunds";
 
 const Home: FC = observer(() => {
   const [activeStep, setActiveStep] = useState(0);
@@ -69,7 +71,9 @@ const Home: FC = observer(() => {
                 Index Funds
               </Typography>
               {
-                !(chainId?.eq(619001)) && <ActionButton chainId={new BigNumber(619001)} />
+                (chainId?.eq(AEVM_CHAIN_ID)) ?
+                  <IndexFunds/> :
+                  <ActionButton chainId={new BigNumber(AEVM_CHAIN_ID)} />
               }
               </>
 
